@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     GameObject camera;
+
     // Start is called before the first frame update
     void Start()
     {
         camera = GameObject.Find("Main Camera");
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(camera);
     }
 
     // Update is called once per frame
@@ -39,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void new_gamestart()
     {
-        SceneManager.LoadScene("stage1_5f");
+        SceneManager.LoadScene("A stage1_5f");
     }
 
 }

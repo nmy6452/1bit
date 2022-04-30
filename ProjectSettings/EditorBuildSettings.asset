@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Character_selection.unity
     guid: c9731c3824b9ae34ebb8b8a487286d55
   - enabled: 1
-    path: Assets/Scenes/prologue.unity
+    path: Assets/Scenes/Chapter_P_story_B.unity
     guid: 52e6e6e2d4fbd5e4c8025a6ee7b06b10
   - enabled: 1
     path: Assets/Scenes/A stage1_5f.unity

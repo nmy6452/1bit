@@ -6,21 +6,18 @@ using UnityEngine.UI;
 
 public class puzzle_manager_Chapter_1 : MonoBehaviour
 {
-    [SerializeField]
-    private RectTransform leverpositon;
-    private RectTransform rectTransform;
+    public GameObject proviso;
 
-    public GameObject lever;
+    public InputField[] puzzle_2;
+    private int[] puzzle_2_A_password = { 1, 0, 1, 1, 1 };
 
-    public Button Button_0;
-    public Button Button_1;
-
-    public int[] puzzle_1_password = { 1, 1, 1, 0, 0, 1, 1, 1, 0 };
+    private int[] puzzle_1_password = { 1, 1, 1, 0, 0, 1, 1, 1, 0 };
     public List<int> puzzle_1_inputPassword;
 
+
+    /* ---------1번 퍼즐--------- */
     public void puzzle_1_input(int a)
     {
-        Debug.Log(a);
         puzzle_1_inputPassword.Add(a);
     }
     public bool puzzle_1_solve()
@@ -38,9 +35,35 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     public void puzzle_1_clear()
     {
         if (puzzle_1_solve())
+        {
+            proviso.SetActive(true);
             Debug.Log("정답입니다.");
+        }
         else
             puzzle_1_inputPassword = new List<int>();
+    }
+
+    /* ---------2번 퍼즐--------- */
+    public bool puzzle_2_solve()
+    {
+        int[] Check = new int[5];
+        for (int i = 0; i < puzzle_2.Length; i++)
+        {
+            Check[i] = int.Parse(puzzle_2[i].text);
+        }
+        return Check.SequenceEqual(puzzle_2_A_password);
+    }
+
+    public void puzzle_2_Submit()
+    {
+        if(puzzle_2_solve())
+        {
+            Debug.Log("정답입니다.");
+        }
+        else
+        {
+            Debug.Log("오답입니다.");
+        }
     }
 
     // Start is called before the first frame update

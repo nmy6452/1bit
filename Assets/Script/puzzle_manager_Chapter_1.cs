@@ -8,11 +8,15 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
 {
     public GameObject proviso;
 
+    private int[] puzzle_1_password = { 1, 1, 1, 0, 0, 1, 1, 1, 0 };
+    public List<int> puzzle_1_inputPassword;
+
     public InputField[] puzzle_2;
     private int[] puzzle_2_A_password = { 1, 0, 1, 1, 1 };
 
-    private int[] puzzle_1_password = { 1, 1, 1, 0, 0, 1, 1, 1, 0 };
-    public List<int> puzzle_1_inputPassword;
+    public GameObject[] mirror;
+    public float waitForSeconds;
+    private bool mirrorActive;
 
 
     /* ---------1번 퍼즐--------- */
@@ -46,17 +50,26 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     /* ---------2번 퍼즐--------- */
     public bool puzzle_2_solve()
     {
-        int[] Check = new int[5];
         for (int i = 0; i < puzzle_2.Length; i++)
         {
-            Check[i] = int.Parse(puzzle_2[i].text);
+            if (puzzle_2[i].text == "")
+            {
+                return false;
+            }
+            else
+            {
+                if (int.Parse(puzzle_2[i].text) != puzzle_2_A_password[i])
+                {
+                    return false;
+                }
+            }
         }
-        return Check.SequenceEqual(puzzle_2_A_password);
+        return true;
     }
 
     public void puzzle_2_Submit()
     {
-        if(puzzle_2_solve())
+        if (puzzle_2_solve())
         {
             Debug.Log("정답입니다.");
         }
@@ -64,6 +77,30 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
         {
             Debug.Log("오답입니다.");
         }
+    }
+
+    /* ---------3번 퍼즐--------- */
+
+
+    [SerializeField]
+    public void puzzle_3_mirror_clear(int a)
+    {
+        if(mirrorActive == false)
+        { 
+            mirror[a].SetActive(false);
+            mirror[a + 1].SetActive(true);
+            mirrorActive = true;
+            StartCoroutine(puzzle_3_mirror_black(a));
+        }
+
+    }
+
+    public IEnumerator puzzle_3_mirror_black(int a)
+    {
+        yield return new WaitForSeconds(waitForSeconds);
+        mirror[a].SetActive(true);
+        mirror[a + 1].SetActive(false);
+        mirrorActive = false;
     }
 
     // Start is called before the first frame update

@@ -17,6 +17,8 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     public GameObject[] mirror;
     public float waitForSeconds;
     private bool mirrorActive;
+    public InputField puzzle_3;
+    private string puzzle_3_A_password = "java";
 
 
     /* ---------1번 퍼즐--------- */
@@ -92,8 +94,8 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
             mirrorActive = true;
             StartCoroutine(puzzle_3_mirror_black(a));
         }
-
     }
+
 
     public IEnumerator puzzle_3_mirror_black(int a)
     {
@@ -101,6 +103,14 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
         mirror[a].SetActive(true);
         mirror[a + 1].SetActive(false);
         mirrorActive = false;
+    }
+
+    public void puzzle_3_password_input()
+    {
+        if (puzzle_3_A_password == puzzle_3.text)
+            Debug.Log("정답");
+        else
+            Debug.Log("오답");
     }
 
     // Start is called before the first frame update

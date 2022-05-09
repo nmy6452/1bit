@@ -41,14 +41,34 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Chapter_1_A_passageway");
     }
 
-    public void but_Chapter1_Classroom()
+    public void but_C1_passageway_Classroom()
     {
         SceneManager.LoadScene("Chapter_1_A_Classroom", LoadSceneMode.Additive);
     }
 
-    public void but_Chapter1_Classroom_quit()
+    public void but_C1_Classroom_passageway()
     {
         SceneManager.UnloadSceneAsync("Chapter_1_A_Classroom");
+    }
+
+    public void but_C1_passageway_RestRoom()
+    {
+        SceneManager.LoadScene("Chapter_1_A_RestRoom", LoadSceneMode.Additive);
+    }
+
+    public void but_C1_RestRoom_passageway()
+    {
+        SceneManager.UnloadSceneAsync("Chapter_1_A_RestRoom");
+    }
+
+    public void but_C1_passageway_Store()
+    {
+        SceneManager.LoadScene("Chapter_1_A_Store", LoadSceneMode.Additive);
+    }
+
+    public void but_C1_Store_passageway()
+    {
+        SceneManager.UnloadSceneAsync("Chapter_1_A_Store");
     }
 
 }

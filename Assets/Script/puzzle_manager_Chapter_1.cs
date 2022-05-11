@@ -20,6 +20,13 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     public InputField puzzle_3;
     private string puzzle_3_A_password = "java";
 
+    private int[,] puzzle_4_A_password = { 
+        { 1,0,0,0,1 },
+        { 0,0,1,0,1 },
+        { 1,1,1,1,1 },
+        { 0,1,0,1,0 },
+        { 1,0,1,0,1 } };
+    
 
     /* ---------1번 퍼즐--------- */
     public void puzzle_1_input(int a)
@@ -73,6 +80,7 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     {
         if (puzzle_2_solve())
         {
+            proviso.SetActive(true);
             Debug.Log("정답입니다.");
         }
         else
@@ -108,7 +116,23 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     public void puzzle_3_password_input()
     {
         if (puzzle_3_A_password == puzzle_3.text)
-            Debug.Log("정답");
+        {
+            proviso.SetActive(true);
+            Debug.Log("정답입니다.");
+        }
+        else
+            Debug.Log("오답");
+    }
+
+    /* ---------4번 퍼즐--------- */
+
+    public void puzzle_4_password_input()
+    {
+        if (puzzle_3_A_password == puzzle_3.text)
+        {
+            proviso.SetActive(true);
+            Debug.Log("정답입니다.");
+        }
         else
             Debug.Log("오답");
     }

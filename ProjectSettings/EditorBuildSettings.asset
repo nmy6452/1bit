@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter_1/Chapter_1_A/Chapter_1_A_Classroom.unity
     guid: dbac80c015412a047b1d37d6ce436ee3
   - enabled: 1
-    path: Assets/Scenes/Chapter_1/Chapter_1_A/Chapter_1_A_passageway.unity
+    path: Assets/Scenes/Chapter_1/Chapter_1_A_passageway.unity
     guid: 74dbd53c72f624e4c9275e71852866fd
   - enabled: 1
     path: Assets/Scenes/Chapter_1/Chapter_1_A/Chapter_1_A_Store.unity

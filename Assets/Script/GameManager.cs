@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     GameObject camera;
+    public GameObject MsgBoxPrefab;
+    public bool clear_c1, clear_c2, clear_c3 = false;
+    public float WaitForMessage;
+    public bool Messageing;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         camera = GameObject.Find("Main Camera");
@@ -21,54 +26,52 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void but_newGame()
+    public void MessageBox(string Title, string Text)
+    {
+        //메시지 박스 프리팹 가져와서 텍스트를 넣음
+        Messageing = true;
+        Debug.Log(MsgBoxPrefab);
+        GameObject MsgBox = Instantiate(MsgBoxPrefab, new Vector3(0,0,0), Quaternion.identity, GameObject.Find("message").transform);
+        Debug.Log(MsgBox);
+        MsgBox.transform.Find("Title").GetComponent<Text>().text = Title;
+        MsgBox.transform.Find("Text").GetComponent<Text>().text = Text;
+        MsgBox.GetComponent<RectTransform>().localPosition = Vector3.zero;
+        MsgBox.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        Destroy(MsgBox, WaitForMessage);
+    }
+
+    public void Main_Characterselection()
     {
         SceneManager.LoadScene("Character_selection", LoadSceneMode.Additive);
+
     }
 
-    public void but_test()
-    {
-        Debug.Log("작동~!");
-    }
-
-    public void Character_select()
-    {
-        SceneManager.LoadScene("Chapter_P_A");
-    }
-
-    public void new_gamestart()
+    public void Main_continue()
     {
         SceneManager.LoadScene("Chapter_1_A_passageway");
     }
 
-    public void but_C1_passageway_Classroom()
+    public void Select_Neumann()
     {
-        SceneManager.LoadScene("Chapter_1_A_Classroom", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Chapter_P_story_A");
     }
 
-    public void but_C1_Classroom_passageway()
+    public void PA_C1A()
     {
-        SceneManager.UnloadSceneAsync("Chapter_1_A_Classroom");
+        SceneManager.LoadScene("Chapter_1_A_passageway");
     }
 
-    public void but_C1_passageway_RestRoom()
+    public void C1A_clear()
     {
-        SceneManager.LoadScene("Chapter_1_A_RestRoom", LoadSceneMode.Additive);
+        if (clear_c1)
+        {
+            SceneManager.LoadScene("Chapter_1_story_A");
+        }
     }
 
-    public void but_C1_RestRoom_passageway()
+    public void C1A_C2A()
     {
-        SceneManager.UnloadSceneAsync("Chapter_1_A_RestRoom");
-    }
-
-    public void but_C1_passageway_Store()
-    {
-        SceneManager.LoadScene("Chapter_1_A_Store", LoadSceneMode.Additive);
-    }
-
-    public void but_C1_Store_passageway()
-    {
-        SceneManager.UnloadSceneAsync("Chapter_1_A_Store");
+        SceneManager.LoadScene("Chapter_2_A");
     }
 
 }

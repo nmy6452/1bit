@@ -43,3 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3d19abbf585da4d99e208efc85837e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MsgBoxPrefab: {fileID: 1527883936961560780, guid: 20653da2793092e40966f5bb64288fba,
+    type: 3}
+  clear_c1: 0
+  clear_c2: 0
+  clear_c3: 0
+  WaitForMessage: 0
+  Messageing: 0

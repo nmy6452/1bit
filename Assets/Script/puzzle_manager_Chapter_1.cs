@@ -197,7 +197,7 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     {
         if (Gamemanager.GetComponent<GameManager>().clear_c1)
         {
-            SceneManager.LoadScene("Chapter_1_story_A");
+            SceneManager.LoadScene("Ending");
         }
         else
         {

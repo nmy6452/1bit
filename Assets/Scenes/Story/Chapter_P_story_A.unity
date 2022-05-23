@@ -743,7 +743,7 @@ MonoBehaviour:
         - m_Target: {fileID: 6183855913702530090, guid: 77d7a2fc3fcbe614f9e86673a90a1bbc,
             type: 3}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: PA_C1A
+          m_MethodName: Chapter_P_A
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

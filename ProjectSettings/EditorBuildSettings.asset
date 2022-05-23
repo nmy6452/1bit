@@ -11,18 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu/Character_selection.unity
     guid: c9731c3824b9ae34ebb8b8a487286d55
-  - enabled: 1
-    path: Assets/Scenes/Chapter_1/Chapter_1_A/Chapter_1_A_RestRoom.unity
-    guid: a6c25bd987a187b4f8f3536913a3fa46
-  - enabled: 1
-    path: Assets/Scenes/Chapter_1/Chapter_1_A/Chapter_1_A_Classroom.unity
-    guid: dbac80c015412a047b1d37d6ce436ee3
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Chapter_1/Chapter_1_A_passageway.unity
     guid: 74dbd53c72f624e4c9275e71852866fd
-  - enabled: 1
-    path: Assets/Scenes/Chapter_1/Chapter_1_A/Chapter_1_A_Store.unity
-    guid: beb323a3e82e69c48ae2b3a414d362f1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Chapter_P_A.unity
     guid: 3c9524db881e9c049946b724192b0b9e
@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story/Chapter_1_story_B.unity
     guid: 56dcaf08991f34148ba18026eca823bd
+  - enabled: 1
+    path: Assets/Scenes/Story/Ending.unity
+    guid: c0b8396397075384ab5169a81acc6a6f
   m_configObjects: {}

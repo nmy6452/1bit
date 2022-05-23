@@ -7,24 +7,37 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     GameObject camera;
+    GameObject message;
     public GameObject MsgBoxPrefab;
+    public bool hasdata = false;
     public bool clear_c1, clear_c2, clear_c3 = false;
     public float WaitForMessage;
     public bool Messageing;
+
+    public Button[] But_mainmenu;
 
 
     void Start()
     {
         camera = GameObject.Find("Main Camera");
+        message = GameObject.Find("message");
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(camera);
+        DontDestroyOnLoad(message);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         
     }
+
 
     public void MessageBox(string Title, string Text)
     {
@@ -48,12 +61,36 @@ public class GameManager : MonoBehaviour
 
     public void Main_continue()
     {
-        SceneManager.LoadScene("Chapter_1_A_passageway");
+        if (hasdata)
+        {
+            if (clear_c3)
+                MessageBox("알림", "이미 게임을 완료했습니다.");
+            else if (clear_c2)
+                MessageBox("알림", "아직개발중입니다.");
+            else if (clear_c1)
+                MessageBox("알림", "아직개발중입니다.");
+            else
+                SceneManager.LoadScene("Chapter_1_A_passageway");
+        }
+        else
+            MessageBox("알림", "게임을 새로 시작하세요");
     }
 
     public void Select_Neumann()
     {
         SceneManager.LoadScene("Chapter_P_story_A");
+        hasdata = true;
+    }
+
+    public void Select_Turing()
+    {
+        SceneManager.LoadScene("Chapter_P_story_A");
+        hasdata = true;
+    }
+
+    public void Chapter_P_A()
+    {
+        SceneManager.LoadScene("Chapter_P_A");
     }
 
     public void PA_C1A()
@@ -72,6 +109,24 @@ public class GameManager : MonoBehaviour
     public void C1A_C2A()
     {
         SceneManager.LoadScene("Chapter_2_A");
+    }
+
+    public void Ending()
+    {
+        SceneManager.LoadScene("Ending");
+    }
+
+    public void Mainmenu()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    void ClearGameData()
+    {
+        clear_c1 = false;
+        clear_c2 = false;
+        clear_c3 = false;
+        hasdata = false;
     }
 
 }

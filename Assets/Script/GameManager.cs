@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     GameObject camera;
     GameObject message;
+    GameObject passageway;
     public GameObject MsgBoxPrefab;
     public bool hasdata = false;
     public bool clear_c1, clear_c2, clear_c3 = false;

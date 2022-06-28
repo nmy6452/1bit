@@ -9,7 +9,6 @@ public class ScreenController : MonoBehaviour
     public GameObject passway;
     public GameObject contant;
     public float Movespeed;
-    public bool isMove = false;
     public bool isclick = false;
     const int anchor1 = 0;
     const int anchor2 = -1920;
@@ -27,14 +26,13 @@ public class ScreenController : MonoBehaviour
     void Update()
     {
 
-        if (passway.activeSelf == true && isMove && !isclick)
+        if (passway.activeSelf == true && !isclick)
         {
             Movecontant();
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            isMove = true;
             isclick = false;
         }
 
@@ -49,26 +47,18 @@ public class ScreenController : MonoBehaviour
         if (contant.GetComponent<RectTransform>().position.x >= -960)
         {
             contant.GetComponent<RectTransform>().anchoredPosition = Vector3.Lerp(contant.GetComponent<RectTransform>().anchoredPosition, new Vector3(anchor1, 0, 0), Movespeed);
-            if (contant.GetComponent<RectTransform>().anchoredPosition.x == anchor1)
-                isMove = false;
         }
         else if (contant.GetComponent<RectTransform>().position.x >= -2880)
         {
             contant.GetComponent<RectTransform>().anchoredPosition = Vector3.Lerp(contant.GetComponent<RectTransform>().anchoredPosition, new Vector3(anchor2, 0, 0), Movespeed);
-            if (contant.GetComponent<RectTransform>().anchoredPosition.x == anchor2)
-                isMove = false;
         }
         else if (contant.GetComponent<RectTransform>().position.x >= -4800)
         {
             contant.GetComponent<RectTransform>().anchoredPosition = Vector3.Lerp(contant.GetComponent<RectTransform>().anchoredPosition, new Vector3(anchor3, 0, 0), Movespeed);
-            if (contant.GetComponent<RectTransform>().anchoredPosition.x == anchor3)
-                isMove = false;
         }
         else
         {
             contant.GetComponent<RectTransform>().anchoredPosition = Vector3.Lerp(contant.GetComponent<RectTransform>().anchoredPosition, new Vector3(anchor4, 0, 0), Movespeed);
-            if (contant.GetComponent<RectTransform>().anchoredPosition.x == anchor4)
-                isMove = false;
         }
     }
 

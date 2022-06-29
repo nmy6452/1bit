@@ -13,12 +13,16 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
 
     private int[] puzzle_1_password = { 1, 1, 1, 0, 0, 1, 1, 1, 0 };
     public List<int> puzzle_1_inputPassword;
+    public GameObject URL;
+    public GameObject monitor;
+    public GameObject monitor_Panel;
 
     public InputField[] puzzle_2;
     private int[] puzzle_2_A_password = { 1, 0, 1, 1, 1 };
 
-    public GameObject[] mirror;
-    public GameObject[] clearmirror;
+    public GameObject[] mirror_GameObject;
+    public Sprite[] mirror;
+    public GameObject[] clearmirror_GameObject;
     public float waitForSeconds;
     private bool mirrorActive;
     public InputField puzzle_3;
@@ -40,7 +44,7 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
         {
             temp += puzzle_1_inputPassword[i];
         }
-        Gamemanager.GetComponent<GameManager>().MessageBox("입력", temp);
+        URL.GetComponent<Text>().text = temp;
     }
     public bool puzzle_1_Check()
     {
@@ -63,14 +67,17 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
         else
         {
             puzzle_1_inputPassword = new List<int>();
+            URL.GetComponent<Text>().text = "";
             Gamemanager.GetComponent<GameManager>().MessageBox("알림", "오답입니다.");
         }
     }
 
     public void puzzle_1_clear()
     {
-            proviso[0].SetActive(true);
-            Gamemanager.GetComponent<GameManager>().MessageBox("알림", "정답입니다.");
+        proviso[0].SetActive(true);
+        Gamemanager.GetComponent<GameManager>().MessageBox("알림", "정답입니다.");
+        monitor.GetComponent<Button>().interactable = false;
+        monitor_Panel.SetActive(false);
     }
 
 
@@ -127,8 +134,8 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     {
         if(mirrorActive == false)
         { 
-            mirror[a].SetActive(false);
-            clearmirror[a].SetActive(true);
+            mirror_GameObject[a].GetComponent<Image>().sprite = mirror[0];
+            clearmirror_GameObject[a].SetActive(true);
             mirrorActive = true;
             StartCoroutine(puzzle_3_mirror_black(a));
         }
@@ -137,8 +144,8 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     public IEnumerator puzzle_3_mirror_black(int a)
     {
         yield return new WaitForSeconds(waitForSeconds);
-        mirror[a].SetActive(true);
-        clearmirror[a].SetActive(false);
+        mirror_GameObject[a].GetComponent<Image>().sprite = mirror[1];
+        clearmirror_GameObject[a].SetActive(false);
         mirrorActive = false;
     }
 

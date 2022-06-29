@@ -11,15 +11,17 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     public GameObject[] proviso;
     public GameObject elevator_panel;
 
+    /* ---------1번 퍼즐[교실]--------- */
     private int[] puzzle_1_password = { 1, 1, 1, 0, 0, 1, 1, 1, 0 };
     public List<int> puzzle_1_inputPassword;
-    public GameObject URL;
-    public GameObject monitor;
-    public GameObject monitor_Panel;
 
+    /* ---------2번 퍼즐[창고]--------- */
     public InputField[] puzzle_2;
     private int[] puzzle_2_A_password = { 1, 0, 1, 1, 1 };
+    public GameObject coffer, wire_box_Panel;
 
+
+    /* ---------3번 퍼즐[화장실]--------- */
     public GameObject[] mirror_GameObject;
     public Sprite[] mirror;
     public GameObject[] clearmirror_GameObject;
@@ -27,7 +29,9 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     private bool mirrorActive;
     public InputField puzzle_3;
     private string puzzle_3_A_password = "java";
+    public GameObject URL, monitor, monitor_Panel;
 
+    /* ---------4번 퍼즐[엘리베이터]--------- */
     private bool[] puzzle_4_A_password = { false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true};
     public GameObject[] puzzle_4_A_inputPassword;
 
@@ -115,7 +119,8 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
 
     public void puzzle_2_clear()
     {
-        GameObject.Find("Chapter_1_puzzle_2_A").SetActive(false);
+        coffer.GetComponent<Button>().interactable = false;
+        wire_box_Panel.SetActive(false);
         proviso[1].SetActive(true);
         Gamemanager.GetComponent<GameManager>().MessageBox("알림", "정답입니다.");
     }

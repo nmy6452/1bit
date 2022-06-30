@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
 
     public void PA_C1A()
     {
-        SceneManager.LoadScene("Chapter_1_A_passageway");
+        SceneManager.LoadScene("Chapter_1_A");
     }
 
     public void C1A_clear()

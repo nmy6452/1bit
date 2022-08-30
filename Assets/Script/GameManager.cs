@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
             else if (clear_c1)
                 MessageBox("알림", "아직개발중입니다.");
             else
-                SceneManager.LoadScene("Chapter_1_A_passageway");
+                SceneManager.LoadScene("Chapter_1_A");
         }
         else
             MessageBox("알림", "게임을 새로 시작하세요");

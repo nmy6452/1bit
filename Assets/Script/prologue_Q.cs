@@ -22,7 +22,7 @@ public class prologue_Q : MonoBehaviour
     public void password_Submit()
     {
         if (InputField_password_1.text == password_1 && InputField_password_2.text == password_2 && InputField_password_3.text == password_3 && InputField_password_4.text == password_4)
-            SceneManager.LoadScene("Chapter_1_A_passageway");
+            SceneManager.LoadScene("Chapter_1_A");
         else
             Debug.Log("비밀번호가 틀렸습니다.");
     }

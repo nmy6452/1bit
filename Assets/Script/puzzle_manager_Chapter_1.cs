@@ -209,7 +209,7 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     {
         if (Gamemanager.GetComponent<GameManager>().clear_c1)
         {
-            SceneManager.LoadScene("Ending");
+            SceneManager.LoadScene("Chapter_2_A");
         }
         else
         {

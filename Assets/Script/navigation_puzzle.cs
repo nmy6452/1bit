@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class navigation_puzzle : MonoBehaviour
 {
     public RectTransform Startpoint,Endpoint;
@@ -79,6 +79,7 @@ public class navigation_puzzle : MonoBehaviour
             if (hit.collider.name == "EndPoint" && Croos_tile())
             {
                 Debug.Log("정답입니다.");
+                SceneManager.LoadScene("Ending");
             }
         }
     }

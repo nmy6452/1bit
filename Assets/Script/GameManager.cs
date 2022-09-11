@@ -44,9 +44,7 @@ public class GameManager : MonoBehaviour
     {
         //메시지 박스 프리팹 가져와서 텍스트를 넣음
         Messageing = true;
-        Debug.Log(MsgBoxPrefab);
         GameObject MsgBox = Instantiate(MsgBoxPrefab, new Vector3(0,0,0), Quaternion.identity, GameObject.Find("message").transform);
-        Debug.Log(MsgBox);
         MsgBox.transform.Find("Title").GetComponent<Text>().text = Title;
         MsgBox.transform.Find("Text").GetComponent<Text>().text = Text;
         MsgBox.GetComponent<RectTransform>().localPosition = Vector3.zero;
@@ -85,7 +83,7 @@ public class GameManager : MonoBehaviour
 
     public void Select_Turing()
     {
-        SceneManager.LoadScene("Chapter_P_story_A");
+        SceneManager.LoadScene("Chapter_P_story_B");
         hasdata = true;
     }
 
@@ -94,22 +92,28 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Chapter_P_A");
     }
 
+    public void Chapter_P_B()
+    {
+        SceneManager.LoadScene("Chapter_P_B");
+    }
+
     public void PA_C1A()
     {
         SceneManager.LoadScene("Chapter_1_A");
     }
-
-    public void C1A_clear()
+    public void PA_C1B()
     {
-        if (clear_c1)
-        {
-            SceneManager.LoadScene("Chapter_1_story_A");
-        }
+        SceneManager.LoadScene("Chapter_1_B");
     }
 
     public void C1A_C2A()
     {
         SceneManager.LoadScene("Chapter_2_A");
+    }
+
+    public void C1A_C2B()
+    {
+        SceneManager.LoadScene("Chapter_2_B");
     }
 
     public void Ending()

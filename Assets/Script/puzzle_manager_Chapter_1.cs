@@ -18,6 +18,7 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     /* ---------2번 퍼즐[창고]--------- */
     public InputField[] puzzle_2;
     private int[] puzzle_2_A_password = { 1, 0, 1, 1, 1 };
+    private int[] puzzle_2_B_password = { 1, 1, 1, 1};
     public GameObject coffer, wire_box_Panel;
 
 
@@ -105,9 +106,40 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
         return true;
     }
 
+    public bool puzzle_2B_Check()
+    {
+        for (int i = 0; i < puzzle_2.Length; i++)
+        {
+            if (puzzle_2[i].text == "")
+            {
+                return false;
+            }
+            else
+            {
+                if (int.Parse(puzzle_2[i].text) != puzzle_2_B_password[i])
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public void puzzle_2_Submit()
     {
         if (puzzle_2_Check())
+        {
+            puzzle_2_clear();
+        }
+        else
+        {
+            Gamemanager.GetComponent<GameManager>().MessageBox("알림", "오답입니다.");
+        }
+    }
+
+    public void puzzle_2B_Submit()
+    {
+        if (puzzle_2B_Check())
         {
             puzzle_2_clear();
         }
@@ -210,6 +242,18 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
         if (Gamemanager.GetComponent<GameManager>().clear_c1)
         {
             SceneManager.LoadScene("Chapter_2_A");
+        }
+        else
+        {
+            Gamemanager.GetComponent<GameManager>().MessageBox("알림", "엘리베이터가 활성화되지 않았습니다.");
+        }
+    }
+
+    public void C1A_clear_B()
+    {
+        if (Gamemanager.GetComponent<GameManager>().clear_c1)
+        {
+            SceneManager.LoadScene("Chapter_2_B");
         }
         else
         {

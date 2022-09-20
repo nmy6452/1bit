@@ -33,7 +33,7 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     public GameObject URL, monitor, monitor_Panel;
 
     /* ---------4번 퍼즐[엘리베이터]--------- */
-    private bool[] puzzle_4_A_password = { false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true};
+    private bool[] puzzle_4_A_password = { true, false, false, true, false, true, false, true, false, false, true, true, false, true, false, true};
     public GameObject[] puzzle_4_A_inputPassword;
 
     public bool Have_fuse = false;
@@ -220,7 +220,6 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
         {
             if (puzzle_4_A_inputPassword[i].GetComponent<Toggle>().isOn != puzzle_4_A_password[i])
             {
-                Gamemanager.GetComponent<GameManager>().MessageBox("알림", "오답입니다.");
                 return;
             }
         }

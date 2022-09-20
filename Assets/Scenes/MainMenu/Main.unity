@@ -1133,6 +1133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6183855913702530090, guid: 77d7a2fc3fcbe614f9e86673a90a1bbc,
         type: 3}
+      propertyPath: clear_c1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183855913702530090, guid: 77d7a2fc3fcbe614f9e86673a90a1bbc,
+        type: 3}
       propertyPath: WaitForMessage
       value: 5
       objectReference: {fileID: 0}

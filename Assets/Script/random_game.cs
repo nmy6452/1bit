@@ -36,6 +36,7 @@ public class random_game : MonoBehaviour
         if (!isStart)
         {
             isStart = true;
+            start_but.SetActive(false);
             button_shuffle();
             screen.SetActive(true);
             coroutine = StartCoroutine(hint_rev(a));
@@ -94,6 +95,7 @@ public class random_game : MonoBehaviour
             StopCoroutine(coroutine);
         }
         screen.SetActive(false);
+        start_but.SetActive(true);
     }
 
     void success()

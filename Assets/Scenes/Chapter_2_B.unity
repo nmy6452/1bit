@@ -414,85 +414,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42698642}
   m_CullTransparentMesh: 1
---- !u!1 &78177482
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 78177483}
-  - component: {fileID: 78177485}
-  - component: {fileID: 78177484}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &78177483
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78177482}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1749557192}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &78177484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78177482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Button
---- !u!222 &78177485
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78177482}
-  m_CullTransparentMesh: 1
 --- !u!1 &89483369
 GameObject:
   m_ObjectHideFlags: 0
@@ -5567,8 +5488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f4b91358c59de4b919d03ce41b2d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gamemanager: {fileID: 6183855913702530068, guid: 77d7a2fc3fcbe614f9e86673a90a1bbc,
-    type: 3}
   PlayableDirector: {fileID: 277995647}
   lab_Scrollview: {fileID: 470615324}
   lab_open_door: {fileID: 638855553}
@@ -14322,8 +14241,7 @@ RectTransform:
   m_LocalRotation: {x: -0.008727747, y: -0.002513499, z: 0.00002193808, w: 0.9999588}
   m_LocalPosition: {x: 0, y: 0, z: -0.621421}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 78177483}
+  m_Children: []
   m_Father: {fileID: 1250091289}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -1, y: -0.288, z: 0.005}
@@ -15507,6 +15425,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: "\u2191 \u2192 \u2192  \u2193 \n\u2192 \u2192 \u2191 \u2192"
+      objectReference: {fileID: 0}
+    - target: {fileID: 408976857781245930, guid: a9a28580f8b006c408015701157d1a43,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 408976857781245930, guid: a9a28580f8b006c408015701157d1a43,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408976857781245930, guid: a9a28580f8b006c408015701157d1a43,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3020031165899485231, guid: a9a28580f8b006c408015701157d1a43,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4465867113530402300, guid: a9a28580f8b006c408015701157d1a43,
         type: 3}
@@ -18012,6 +17950,11 @@ PrefabInstance:
       propertyPath: puzzleManager
       value: 
       objectReference: {fileID: 845757746}
+    - target: {fileID: 6835516788762538255, guid: c0143199536ebff4daa25b4b420bc58d,
+        type: 3}
+      propertyPath: m_Text
+      value: "2-3\n\n\uB0A8\uC11C \uBC29\uD5A5"
+      objectReference: {fileID: 0}
     - target: {fileID: 6835516789085608669, guid: c0143199536ebff4daa25b4b420bc58d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

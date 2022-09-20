@@ -76,11 +76,19 @@ public class navigation_puzzle : MonoBehaviour
                 cross.transform.parent.GetComponent<Image>().color = Color.gray;
                 cross.transform.SetParent(hit.transform, false);
             }
+            else
+            {
+                password_input.RemoveAt(password_input.Count - 1);
+            }
             if (hit.collider.name == "EndPoint" && Croos_tile())
             {
                 Debug.Log("정답입니다.");
                 SceneManager.LoadScene("Ending");
             }
+        }
+        else
+        {
+            password_input.RemoveAt(password_input.Count-1);
         }
     }
 

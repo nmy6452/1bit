@@ -229,7 +229,7 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
     private void puzzle_4_clear()
     {
         Gamemanager.GetComponent<GameManager>().MessageBox("알림", "정답입니다");
-        Gamemanager.GetComponent<GameManager>().clear_c1 = true;
+        PlayerPrefs.SetInt("chapter", 2);
         for (int i = 0; i < puzzle_4_A_inputPassword.Length; i++)
         {
             puzzle_4_A_inputPassword[i].GetComponent<Toggle>().interactable = false;
@@ -238,7 +238,7 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
 
     public void C1A_clear()
     {
-        if (Gamemanager.GetComponent<GameManager>().clear_c1)
+        if (PlayerPrefs.GetInt("chapter") == 2)
         {
             SceneManager.LoadScene("Chapter_2_A");
         }
@@ -250,7 +250,7 @@ public class puzzle_manager_Chapter_1 : MonoBehaviour
 
     public void C1A_clear_B()
     {
-        if (Gamemanager.GetComponent<GameManager>().clear_c1)
+        if (PlayerPrefs.GetInt("chapter") == 2)
         {
             SceneManager.LoadScene("Chapter_2_B");
         }

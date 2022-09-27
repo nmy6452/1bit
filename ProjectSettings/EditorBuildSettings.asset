@@ -35,18 +35,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story/Chapter_P_story_B.unity
     guid: 52e6e6e2d4fbd5e4c8025a6ee7b06b10
-  - enabled: 1
-    path: Assets/Scenes/Story/Chapter_1_story_A.unity
-    guid: cad1be1728935654687cf02d0db4921a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Chapter_1_B.unity
     guid: 94120e97dc350b34c8a69ce28a7f1261
   - enabled: 1
     path: Assets/Scenes/Chapter_2_B.unity
     guid: 24d4343629ea53c46a831d5952bfbdac
-  - enabled: 1
-    path: Assets/Scenes/Story/Chapter_1_story_B.unity
-    guid: 56dcaf08991f34148ba18026eca823bd
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Story/Ending.unity
     guid: c0b8396397075384ab5169a81acc6a6f

@@ -7,6 +7,7 @@ public class navigation_puzzle : MonoBehaviour
 {
     public RectTransform Startpoint,Endpoint;
     public GameObject PuzzleManager;
+    public GameObject GameManager;
     public GameObject cross;
     string[] password = {"up", "right", "right", "down", "right", "right", "up", "up", "up", "right", "right",  "down", "right", "right", "up", "right" };
     public List<string> password_input;
@@ -16,6 +17,7 @@ public class navigation_puzzle : MonoBehaviour
         PuzzleManager = GameObject.Find("PuzzleManager");
         Startpoint = GameObject.Find("StartPoint").GetComponent<RectTransform>();
         Endpoint = GameObject.Find("EndPoint").GetComponent<RectTransform>();
+        GameManager = GameObject.Find("GameManager");
         cross = GameObject.Find("Cross");
         cross.transform.SetParent(Startpoint, false);
         cross.transform.localPosition = new Vector3(0, 0, 0);
@@ -83,7 +85,7 @@ public class navigation_puzzle : MonoBehaviour
             if (hit.collider.name == "EndPoint" && Croos_tile())
             {
                 Debug.Log("정답입니다.");
-                SceneManager.LoadScene("Ending");
+                GameManager.GetComponent<GameManager>().Ending();
             }
         }
         else
@@ -106,9 +108,5 @@ public class navigation_puzzle : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("a"))
-        {
-            Croos_tile(1);
-        }
     }
 }

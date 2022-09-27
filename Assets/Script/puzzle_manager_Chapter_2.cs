@@ -23,6 +23,8 @@ public class puzzle_manager_Chapter_2 : MonoBehaviour
     public bool has_key = false;
     bool has_envelope = false;
 
+    public GameObject office_door;
+    public AudioClip door_sound;
     public GameObject office;
     public GameObject passageway;
 
@@ -79,12 +81,12 @@ public class puzzle_manager_Chapter_2 : MonoBehaviour
     {
         if (has_key)
         {
+            office_door.GetComponent<AudioSource>().PlayOneShot(door_sound);
             office.SetActive(true);
-            passageway.SetActive(false);
         }
         else
         {
-            Gamemanager.GetComponent<GameManager>().MessageBox("고명철 교수", "출입금지\n(문이 잠겨있다.)");
+            Gamemanager.GetComponent<GameManager>().MessageBox("고명철 교수", "출입금지 (문이 잠겨있다.)");
         }
     }
 
